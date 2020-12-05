@@ -1,0 +1,39 @@
+{
+    "name": "17reactavanzado",
+    "version": "1.0.0",
+    "description": "Curso de React Avanzado",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "vercel-build": "npm run build",
+        "build": "webpack",
+        "dev": "webpack serve"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/CLGonzalezGroh/17reactavanzado.git"
+    },
+    "keywords": [
+        "react"
+    ],
+    "author": "Cesar Gonzalez Groh",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/CLGonzalezGroh/17reactavanzado/issues"
+    },
+    "homepage": "https://github.com/CLGonzalezGroh/17reactavanzado#readme",
+    "devDependencies": {
+        "@babel/core": "^7.12.9",
+        "@babel/preset-env": "^7.12.7",
+        "@babel/preset-react": "^7.12.7",
+        "babel-loader": "^8.2.2",
+        "html-webpack-plugin": "^4.5.0",
+        "webpack": "^5.10.0",
+        "webpack-cli": "^4.2.0",
+        "webpack-dev-server": "^3.11.0"
+    },
+    "dependencies": {
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1"
+    }
+}
