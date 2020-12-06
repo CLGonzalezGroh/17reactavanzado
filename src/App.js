@@ -1,6 +1,7 @@
 import React from "react";
 
 import { ListOfCategories } from "./components/ListOfCategories";
+import { ListOfPhotoCards } from "./components/ListOfPhotoCards";
 import { GlobalStyle } from "./GlobalStyles";
 
 const App = () => {
@@ -8,6 +9,7 @@ const App = () => {
     <div>
       <GlobalStyle />
       <ListOfCategories />
+      <ListOfPhotoCards />
     </div>
   );
 };
