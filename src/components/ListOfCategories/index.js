@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from "react";
 
 import { Category } from "../Category";
+import { useCategories } from "../../hooks/useCategories";
+
 import { List, Item } from "./styles";
 
 export const ListOfCategories = () => {
-  const [categories, setCategories] = useState([]);
   const [showFixed, setShowFixed] = useState(false);
 
-  useEffect(function () {
-    fetch("https://petgram-server-clgg.vercel.app/categories")
-      .then((res) => res.json())
-      .then((response) => setCategories(response));
-  }, []);
+  const { categories, loading } = useCategories();
 
   useEffect(
     function () {
@@ -27,12 +24,14 @@ export const ListOfCategories = () => {
   );
 
   const renderList = (fixed) => (
-    <List className={fixed ? "fixed" : ""}>
-      {categories.map((category) => (
-        <Item key={category.id}>
-          <Category {...category} />
-        </Item>
-      ))}
+    <List fixed={fixed}>
+      {loading
+        ? "Cargando..."
+        : categories.map((category) => (
+            <Item key={category.id}>
+              <Category {...category} />
+            </Item>
+          ))}
     </List>
   );
 
