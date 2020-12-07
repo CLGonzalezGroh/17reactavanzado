@@ -1,32 +1,28 @@
-import React, { useState, useEffect } from "react";
+//DEPENDENCIES
+import React from "react";
 
+//COMPONENTS
 import { Category } from "../Category";
-import { useCategories } from "../../hooks/useCategories";
 
+//HOOKS
+import { useFetch } from "../../hooks/useFetch";
+import { useFixNav } from "../../hooks/useFixNav";
+
+//STYLED COMPONENTS
 import { List, Item } from "./styles";
 
+const URL = "https://petgram-server-clgg.vercel.app/categories";
+const SCROLL_Y_TRIGGER = 200;
+
 export const ListOfCategories = () => {
-  const [showFixed, setShowFixed] = useState(false);
-
-  const { categories, loading } = useCategories();
-
-  useEffect(
-    function () {
-      const onScroll = (e) => {
-        const newShowFixed = window.scrollY > 200;
-        showFixed !== newShowFixed && setShowFixed(newShowFixed);
-      };
-      document.addEventListener("scroll", onScroll);
-
-      return () => document.removeEventListener("scroll", onScroll);
-    },
-    [showFixed]
-  );
+  const [categories, loading, error] = useFetch(URL);
+  const showFixed = useFixNav(SCROLL_Y_TRIGGER);
 
   const renderList = (fixed) => (
     <List fixed={fixed}>
+      {error && <h2>Internal Server Error</h2>}
       {loading
-        ? "Cargando..."
+        ? "Loading..."
         : categories.map((category) => (
             <Item key={category.id}>
               <Category {...category} />

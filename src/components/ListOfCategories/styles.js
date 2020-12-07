@@ -17,7 +17,7 @@ export const List = styled.ul`
       box-shadow: 0 0 20 rgba(0, 0, 0, 0.3);
       left: 0;
       right: 0;
-      top: -10px;
+      top: -5px;
       max-width: 400px;
       margin: 0 auto;
       position: fixed;
