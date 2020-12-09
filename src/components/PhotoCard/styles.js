@@ -21,15 +21,6 @@ export const Img = styled.img`
   width: 100%;
 `;
 
-export const Button = styled.button`
-  display: flex;
-  align-items: center;
-  padding: 8px;
-  & svg {
-    margin: 4px;
-  }
-`;
-
 export const Article = styled.article`
   min-height: 200px;
 `;
