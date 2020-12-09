@@ -1,9 +1,14 @@
+//DEPENDENCIES
 import React from "react";
+import { Router } from "@reach/router";
 
+//GLOBAL STYLES
 import { GlobalStyle } from "./styles/GlobalStyles";
 
-import { ListOfCategories } from "./components/ListOfCategories";
-import { ListOfPhotoCards } from "./components/ListOfPhotoCards";
+//PAGES
+import { Home } from "./pages/Home";
+
+//COMPONENTS
 import { PhotoCardDetails } from "./components/PhotoCardDetails";
 import { Logo } from "./components/Logo";
 
@@ -18,10 +23,10 @@ const App = () => {
       {detailId ? (
         <PhotoCardDetails detailId={detailId} />
       ) : (
-        <>
-          <ListOfCategories />
-          <ListOfPhotoCards categoryId="1" />
-        </>
+        <Router>
+          <Home path="/" />
+          <Home path="/pet/:id" />
+        </Router>
       )}
     </div>
   );
