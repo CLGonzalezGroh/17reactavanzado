@@ -7,27 +7,23 @@ import { GlobalStyle } from "./styles/GlobalStyles";
 
 //PAGES
 import { Home } from "./pages/Home";
+import { Details } from "./pages/Details";
 
 //COMPONENTS
-import { PhotoCardDetails } from "./components/PhotoCardDetails";
 import { Logo } from "./components/Logo";
+import { NavBar } from "./components/NavBar";
 
 const App = () => {
-  const urlParams = new window.URLSearchParams(window.location.search);
-  const detailId = urlParams.get("detail");
-
   return (
     <div>
       <GlobalStyle />
       <Logo />
-      {detailId ? (
-        <PhotoCardDetails detailId={detailId} />
-      ) : (
-        <Router>
-          <Home path="/" />
-          <Home path="/pet/:id" />
-        </Router>
-      )}
+      <Router>
+        <Home path="/" />
+        <Home path="/pet/:id" />
+        <Details path="/details/:detailId" />
+      </Router>
+      <NavBar />
     </div>
   );
 };

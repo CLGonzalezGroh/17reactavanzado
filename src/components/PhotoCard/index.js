@@ -1,5 +1,6 @@
 //DEPENDENCIES
 import React from "react";
+import { Link } from "@reach/router";
 
 //COMPONENTS
 import { FavButton } from "../FavButton";
@@ -30,11 +31,11 @@ export const PhotoCard = ({ id, likes = 0, src }) => {
     <Article ref={ref}>
       {show && (
         <>
-          <a href={`/?detail=${id}`}>
+          <Link to={`/details/${id}`}>
             <ImgWrapper>
               <Img src={src} />
             </ImgWrapper>
-          </a>
+          </Link>
           <FavButton
             likes={likes}
             liked={liked}
