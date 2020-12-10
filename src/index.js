@@ -6,15 +6,19 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 //APP
 import App from "./App";
 
+import Context from "./Context";
+
 const client = new ApolloClient({
   uri: "https://petgram-server-clgg.vercel.app/graphql",
   cache: new InMemoryCache(),
 });
 
 ReactDOM.render(
-  <ApolloProvider client={client}>
-    <App />
-  </ApolloProvider>,
+  <Context.Provider>
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
+  </Context.Provider>,
 
   document.getElementById("App")
 );

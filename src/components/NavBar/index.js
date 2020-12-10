@@ -15,10 +15,10 @@ export const NavBar = () => {
       <Link to="/">
         <MdHome size={SIZE} />
       </Link>
-      <Link to="fav">
+      <Link to="/favs">
         <MdFavoriteBorder size={SIZE} />
       </Link>
-      <Link to="user">
+      <Link to="/user">
         <MdPersonOutline size={SIZE} />
       </Link>
     </Nav>

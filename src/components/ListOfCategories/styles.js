@@ -6,6 +6,7 @@ export const List = styled.ul`
   display: flex;
   overflow: scroll;
   width: 100%;
+  margin-bottom: 5px;
   &::-webkit-scrollbar {
     display: none;
   }

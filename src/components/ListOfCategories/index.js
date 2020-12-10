@@ -3,6 +3,7 @@ import React from "react";
 
 //COMPONENTS
 import { Category } from "../Category";
+import { Spinner } from "../Spinner";
 
 //HOOKS
 import { useFetch } from "../../hooks/useFetch";
@@ -21,13 +22,15 @@ export const ListOfCategories = () => {
   const renderList = (fixed) => (
     <List fixed={fixed}>
       {error && <h2>Internal Server Error</h2>}
-      {loading
-        ? "Loading..."
-        : categories.map((category) => (
-            <Item key={category.id}>
-              <Category {...category} path={`/pet/${category.id}`} />
-            </Item>
-          ))}
+      {loading ? (
+        <Spinner />
+      ) : (
+        categories.map((category) => (
+          <Item key={category.id}>
+            <Category {...category} path={`/pet/${category.id}`} />
+          </Item>
+        ))
+      )}
     </List>
   );
 
