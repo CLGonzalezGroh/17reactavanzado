@@ -21,10 +21,20 @@ export const NotRegisteredUser = () => {
             variables: {
               input: { email, password },
             },
-          }).then(activateAuth);
+          })
+            .then(activateAuth)
+            .catch((e) => {
+              console.log(e);
+            });
+        const errorMsg = error && "User already exist!";
         return (
           <>
-            <UserForm onSubmit={handleRegister} title="Sing up" />
+            <UserForm
+              disabled={loading}
+              error={errorMsg}
+              onSubmit={handleRegister}
+              title="Sing up"
+            />
             <UserForm onSubmit={activateAuth} title="Sing in" />
           </>
         );
