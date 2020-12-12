@@ -1,8 +1,8 @@
 import { gql, useMutation } from "@apollo/client";
 
-const LIKE_ANONYMOUS_PHOTO = gql`
+const LIKE_PHOTO = gql`
   mutation($input: LikePhoto!) {
-    likeAnonymousPhoto(input: $input) {
+    likePhoto(input: $input) {
       id
       likes
       liked
@@ -11,6 +11,6 @@ const LIKE_ANONYMOUS_PHOTO = gql`
 `;
 
 export const useToggleLike = () => {
-  const [toggleLike] = useMutation(LIKE_ANONYMOUS_PHOTO);
+  const [toggleLike] = useMutation(LIKE_PHOTO);
   return toggleLike;
 };
