@@ -12,7 +12,9 @@ export const Favs = () => {
   const { loading, error, data } = useGetFavs();
 
   if (loading) return <Spinner />;
-  if (error) return <p>Error!</p>;
+  if (error) {
+    window.location = "/user";
+  }
 
   const { favs } = data;
   return <ListOfFavs favs={favs} />;

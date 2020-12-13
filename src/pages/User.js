@@ -1,5 +1,18 @@
-import React from "react";
+//DEPENDENCIES
+import React, { useContext } from "react";
+
+//GLOBAL STATE
+import { Context } from "../Context";
+
+//COMPONENT
+import { SubmitButton } from "../components/SubmitButton";
 
 export const User = () => {
-  return <div>User</div>;
+  const { removeAuth } = useContext(Context);
+  return (
+    <>
+      <h1>User</h1>
+      <SubmitButton onClick={removeAuth}>Cerrar sesion</SubmitButton>
+    </>
+  );
 };
