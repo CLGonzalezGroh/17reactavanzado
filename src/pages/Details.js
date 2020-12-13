@@ -5,7 +5,7 @@ import React from "react";
 import { PhotoCardDetails } from "../components/PhotoCardDetails";
 import { Layout } from "../components/Layout";
 
-export const Details = ({ detailId }) => {
+export default ({ detailId }) => {
   return (
     <Layout title={`Foto Nro ${detailId}`}>
       <PhotoCardDetails detailId={detailId} />

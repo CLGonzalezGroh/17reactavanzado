@@ -1,5 +1,5 @@
 //DEPENDENCIES
-import React, { useContext } from "react";
+import React, { useContext, Suspense } from "react";
 import { Router, Redirect } from "@reach/router";
 
 //GLOBAL STYLES
@@ -7,22 +7,29 @@ import { GlobalStyle } from "./styles/GlobalStyles";
 
 //PAGES
 import { Home } from "./pages/Home";
-import { Details } from "./pages/Details";
-import { Favs } from "./pages/Favs";
-import { User } from "./pages/User";
-import { NotRegisteredUser } from "./pages/NotRegisteredUser";
-import { NotFound } from "./pages/NotFound";
+// import { Details } from "./pages/Details";
+// import { Favs } from "./pages/Favs";
+// import { User } from "./pages/User";
+// import { NotRegisteredUser } from "./pages/NotRegisteredUser";
+// import { NotFound } from "./pages/NotFound";
 
 //COMPONENTS
 import { Logo } from "./components/Logo";
 import { NavBar } from "./components/NavBar";
+import { Spinner } from "./components/Spinner";
 
 import { Context } from "./Context";
+
+const Favs = React.lazy(() => import("./pages/Favs"));
+const Details = React.lazy(() => import("./pages/Details"));
+const User = React.lazy(() => import("./pages/User"));
+const NotRegisteredUser = React.lazy(() => import("./pages/NotRegisteredUser"));
+const NotFound = React.lazy(() => import("./pages/NotFound"));
 
 const App = () => {
   const { isAuth } = useContext(Context);
   return (
-    <div>
+    <Suspense fallback={<Spinner />}>
       <GlobalStyle />
       <Logo />
       <Router>
@@ -38,7 +45,7 @@ const App = () => {
         <User path="/user" />
       </Router>
       <NavBar />
-    </div>
+    </Suspense>
   );
 };
 

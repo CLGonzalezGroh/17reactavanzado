@@ -12,7 +12,7 @@ import { Layout } from "../components/Layout";
 import { useRegister } from "../hooks/useRegister";
 import { useLogin } from "../hooks/useLogin";
 
-export const NotRegisteredUser = () => {
+export default () => {
   const {
     register,
     data: dataReg,

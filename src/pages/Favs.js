@@ -9,7 +9,7 @@ import { Layout } from "../components/Layout";
 // HOOKS
 import { useGetFavs } from "../hooks/useGetFavs";
 
-export const Favs = () => {
+export default () => {
   const { loading, error, data = {} } = useGetFavs();
 
   if (loading) return <Spinner />;
