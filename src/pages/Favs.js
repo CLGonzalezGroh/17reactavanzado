@@ -9,11 +9,14 @@ import { ListOfFavs } from "../components/ListOfFavs";
 import { useGetFavs } from "../hooks/useGetFavs";
 
 export const Favs = () => {
-  const { loading, error, data } = useGetFavs();
+  const { loading, error, data = {} } = useGetFavs();
 
   if (loading) return <Spinner />;
   if (error) {
-    window.location = "/user";
+    (e) => {
+      console.log(e);
+      return <p>Error!</p>;
+    };
   }
 
   const { favs } = data;
