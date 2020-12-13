@@ -6,6 +6,7 @@ import { Context } from "../Context";
 
 //COMPONENTS
 import { UserForm } from "../components/UserForm";
+import { Layout } from "../components/Layout";
 
 //HOOKS
 import { useRegister } from "../hooks/useRegister";
@@ -58,19 +59,22 @@ export const NotRegisteredUser = () => {
   const errorMsgLog = errorLog && "Invalid user or password";
 
   return (
-    <>
+    <Layout
+      title="Registro de usuario"
+      subtitle="Registrate o inicia sesion si ya tienes una cuenta"
+    >
       <UserForm
         disabled={loadingReg}
         error={errorMsgReg}
         onSubmit={handleRegister}
-        title="Sing up"
+        title="Registro"
       />
       <UserForm
         disabled={loadingLog}
         error={errorMsgLog}
         onSubmit={handleLogin}
-        title="Sing in"
+        title="Inicio de sesion"
       />
-    </>
+    </Layout>
   );
 };

@@ -4,6 +4,7 @@ import React from "react";
 //COMPONENTS
 import { Spinner } from "../components/Spinner";
 import { ListOfFavs } from "../components/ListOfFavs";
+import { Layout } from "../components/Layout";
 
 // HOOKS
 import { useGetFavs } from "../hooks/useGetFavs";
@@ -20,5 +21,12 @@ export const Favs = () => {
   }
 
   const { favs } = data;
-  return <ListOfFavs favs={favs} />;
+  return (
+    <Layout
+      title="Tus favoritos"
+      subtitle="Aqui puedes encontrar tus favoritos"
+    >
+      <ListOfFavs favs={favs} />
+    </Layout>
+  );
 };
