@@ -1,5 +1,6 @@
 //DEPENDENCIES
 import React from "react";
+import PropTypes from "prop-types";
 
 //STYLED COMPONENTS
 import { Button } from "./style";
@@ -15,4 +16,10 @@ export const FavButton = ({ likes, liked, onClick }) => {
       <Icon size="32px" /> {likes} likes!
     </Button>
   );
+};
+
+FavButton.propTypes = {
+  liked: PropTypes.bool,
+  likes: PropTypes.number,
+  onClick: PropTypes.func,
 };

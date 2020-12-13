@@ -10,7 +10,7 @@ export const Category = ({
 }) => {
   return (
     <Link to={path}>
-      <Image src={cover} />
+      <Image src={cover} width="75px" height="75px" />
       {emoji}
     </Link>
   );

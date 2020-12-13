@@ -3,6 +3,7 @@ import React from "react";
 
 //COMPONENTS
 import { PhotoCard } from "../PhotoCard";
+import { Spinner } from "../Spinner";
 
 //HOOKS
 import { useGetPhoto } from "../../hooks/useGetPhoto";
@@ -11,7 +12,7 @@ export const PhotoCardDetails = ({ detailId }) => {
   const { loading, error, data } = useGetPhoto(detailId);
 
   if (loading) {
-    return <h2>Loading...</h2>;
+    return <Spinner />;
   }
   if (error) {
     console.log(error.message);
