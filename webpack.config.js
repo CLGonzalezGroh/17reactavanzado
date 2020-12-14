@@ -18,18 +18,18 @@ module.exports = {
       description: "Con Petgram puedes encontrar fotos de animales domesticos",
       orientation: "portrait",
       display: "standalone",
-      start_url: "/",
-      scope: "/",
+      start_url: "./",
+      scope: "./",
       background_color: "#fff",
       theme_color: "#b1a",
       ios: true,
       icons: [
         {
-          src: path.resolve("./src/assets/icon.png"),
+          src: path.resolve(__dirname, "src/assets/icon.png"),
           sizes: [96, 128, 192, 256, 384, 512],
         },
         {
-          src: path.resolve("./src/assets/icon.png"),
+          src: path.resolve(__dirname, "src/assets/icon.png"),
           size: "1024x1024",
           purpose: "maskable",
         },

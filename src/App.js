@@ -34,7 +34,6 @@ const App = () => {
       <GlobalStyle />
       <Logo />
       <Router>
-        <NotFound default />
         <Home path="/" />
         <Home path="/pet/:id" />
         <Details path="/details/:detailId" />
@@ -44,6 +43,7 @@ const App = () => {
         {isAuth && <Redirect noThrow from="/login" to="/" />}
         <Favs path="/favs" />
         <User path="/user" />
+        <NotFound default />
       </Router>
       <NavBar />
     </Suspense>
