@@ -6,7 +6,7 @@ import { Router, Redirect } from "@reach/router";
 import { GlobalStyle } from "./styles/GlobalStyles";
 
 //PAGES
-import { Home } from "./pages/Home";
+// import { Home } from "./pages/Home";
 // import { Details } from "./pages/Details";
 // import { Favs } from "./pages/Favs";
 // import { User } from "./pages/User";
@@ -25,6 +25,7 @@ const Details = React.lazy(() => import("./pages/Details"));
 const User = React.lazy(() => import("./pages/User"));
 const NotRegisteredUser = React.lazy(() => import("./pages/NotRegisteredUser"));
 const NotFound = React.lazy(() => import("./pages/NotFound"));
+const Home = React.lazy(() => import("./pages/Home"));
 
 const App = () => {
   const { isAuth } = useContext(Context);

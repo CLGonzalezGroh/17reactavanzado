@@ -7,7 +7,7 @@ import { ListOfCategories } from "../components/ListOfCategories";
 import { ListOfPhotoCards } from "../components/ListOfPhotoCards";
 import { Layout } from "../components/Layout";
 
-export const Home = ({ id }) => {
+export default ({ id }) => {
   return (
     <Layout title="Tu app de mascotas">
       <Helmet>
