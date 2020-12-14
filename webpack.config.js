@@ -10,7 +10,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "src/index.html",
+      template: "./src/index.html",
     }),
     new WebpackPwaManifestPlugin({
       name: "Petgram - Tu app de mascotas",
@@ -25,15 +25,17 @@ module.exports = {
       ios: true,
       icons: [
         {
-          src: path.resolve("src/assets/icon.png"),
+          src: path.resolve("./src/assets/icon.png"),
           sizes: [96, 128, 192, 256, 384, 512],
         },
         {
-          src: path.resolve("src/assets/icon.png"),
+          src: path.resolve("./src/assets/icon.png"),
           size: "1024x1024",
           purpose: "maskable",
         },
       ],
+      related_applications: [],
+      prefer_related_applications: false,
     }),
     new WorkboxWebpackPlugin.GenerateSW({
       swDest: "service-worker.js",
